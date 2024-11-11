@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parafrase AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Paraphrasing Tool</h1>
+        <form method="POST">
+            <label for="original_text">Masukkan Teks:</label><br>
+            <textarea name="original_text" rows="4" cols="50"></textarea><br><br>
+            <input type="submit" value="Parafrase">
+        </form>
+        {% if paraphrased_text %}
+            <div class="result">
+                <h2>Hasil Parafrase:</h2>
+                <p>{{ paraphrased_text }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
