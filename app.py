@@ -1,13 +1,10 @@
 from flask import Flask, render_template, request
 from transformers import pipeline
 
-# Inisialisasi aplikasi Flask
 app = Flask(__name__)
 
-# Inisialisasi model parafrase
 paraphraser = pipeline("text2text-generation", model="t5-base")
 
-# Halaman utama dengan formulir input teks
 @app.route("/", methods=["GET", "POST"])
 def home():
     paraphrased_text = ""
