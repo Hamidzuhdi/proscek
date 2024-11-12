@@ -17,5 +17,5 @@ def home():
         paraphrased_text = result[0]['generated_text']
     return render_template("index.html", paraphrased_text=paraphrased_text)
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
